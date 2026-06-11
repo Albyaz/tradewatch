@@ -1,0 +1,31 @@
+[0m23:43:40.736402 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x112daddd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x112ad1650>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x112ad3f10>]}
+
+
+============================== 23:43:40.739257 | 1019cf8f-0eb2-410c-863a-0cd5b68ac742 ==============================
+[0m23:43:40.739257 [info ] [MainThread]: Running with dbt=1.7.0
+[0m23:43:40.739619 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'debug': 'False', 'log_path': 'logs', 'version_check': 'True', 'profiles_dir': '/Users/az/.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt init tradewatch_dbt', 'static_parser': 'True', 'introspect': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m23:43:40.739999 [warn ] [MainThread]: [ConfigFolderDirectory]: Unable to parse dict {'dir': PosixPath('/Users/az/.dbt')}
+[0m23:43:40.740197 [info ] [MainThread]: Creating dbt configuration folder at 
+[0m23:43:40.740953 [debug] [MainThread]: Starter project path: /Users/az/tradewatch/venv/lib/python3.11/site-packages/dbt/include/starter_project
+[0m23:43:40.744810 [info ] [MainThread]: 
+Your new dbt project "tradewatch_dbt" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m23:43:40.745093 [info ] [MainThread]: Setting up your profile.
+[0m23:43:51.678513 [info ] [MainThread]: Profile tradewatch_dbt written to /Users/az/.dbt/profiles.yml using target's sample configuration. Once updated, you'll be able to start developing with dbt.
+[0m23:43:51.702519 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 10.983309, "process_user_time": 1.013924, "process_kernel_time": 0.216946, "process_mem_max_rss": "127074304", "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m23:43:51.703071 [debug] [MainThread]: Command `dbt init` succeeded at 23:43:51.702950 after 10.98 seconds
+[0m23:43:51.703359 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x112dae450>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1139f7f90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1139dbed0>]}
+[0m23:43:51.703643 [debug] [MainThread]: Flushing usage events
