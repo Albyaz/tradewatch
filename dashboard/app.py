@@ -62,10 +62,22 @@ def load_risk_scores():
     engine = get_engine()
     with engine.connect() as conn:
         df = pd.read_sql(text("""
-            SELECT corridor, metric_date, risk_score, risk_level,
-                   avg_wind_speed, avg_wave_height, avg_sentiment, vessel_count, any_storm
-            FROM staging.corridor_risk
-            ORDER BY metric_date DESC, risk_score DESC
+            SELECT
+                cr.corridor,
+                cr.metric_date,
+                cr.risk_score,
+                cr.risk_level,
+                cr.avg_wind_speed,
+                cr.avg_wave_height,
+                cr.avg_sentiment,
+                cr.vessel_count,
+                cr.any_storm,
+                mrs.predicted_risk
+            FROM staging.corridor_risk cr
+            LEFT JOIN marts.corridor_risk_scores mrs
+                ON cr.corridor = mrs.corridor
+                AND cr.metric_date = mrs.score_date
+            ORDER BY cr.metric_date DESC, cr.risk_score DESC
         """), conn)
     return df
 
@@ -144,6 +156,9 @@ for i, (_, row) in enumerate(display_df.iterrows()):
           <div class="metric-row">
             <div class="metric-chip">📰 <span>{float(row['avg_sentiment'] or 0):+.2f}</span></div>
             <div class="metric-chip">⛈ <span>{'Yes' if row['any_storm'] else 'No'}</span></div>
+          </div>
+          <div class="metric-row">
+            <div class="metric-chip">🤖 ML: <span>{float(row['predicted_risk'] or 0):.0f}</span></div>
           </div>
         </div>""", unsafe_allow_html=True)
 
