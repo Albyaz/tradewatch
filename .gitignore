@@ -10,3 +10,5 @@ build/
 .pytest_cache/
 *.json
 !service_account_example.json
+ml/*.pkl
+ml/*.model
